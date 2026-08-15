@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
     game = GameOfLife(glider(rows, cols), backend=args.back)
 
-    for gen in range(1):
-        #print(render(game.state()), end="")
-        #print(f"\x1b[{rows}F", end="")
-        game.step(1000)
+    for gen in range(1000):
+        print(render(game.state()), end="")
+        print(f"\x1b[{rows}F", end="")
+        game.step(1)

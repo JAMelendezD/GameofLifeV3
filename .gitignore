@@ -1,2 +1,4 @@
 __pycache__/
 lib/
+plot.py
+bench.dat

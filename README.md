@@ -35,6 +35,17 @@ backend to be used either CPU or GPU.
 
 ## Benchmarks
 
+A comparison between the old C implementation to the newer C++, C++(OMP) and GPU.
+These were run in a Legion Laptop AMD Ryzen 7 5800H (16 cores) and a RTX 3060
+laptop version.
+
+The benchmarks explore large grid sizes with a constant number of steps set to
+1000. Printing to the terminal is turned off to remove any possible bottlenecks. 
+
+<p align="center">
+  <img width="1000" src="images/benchmark.png">
+</p>
+
 ## Example
 
 <p align="center">
