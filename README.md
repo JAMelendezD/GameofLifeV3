@@ -1,6 +1,32 @@
-# CUDA + modern C++ + Python, via Conway's Game of Life
-   detailed balance. The standard fix is a **checkerboard (red-black)
-   update**: color the grid like a checkerboard, update all "black" cells
-   in parallel (they only ever depend on "red" neighbours, which are frozen
-   this half-step), then update all "red" cells the same way. Two kernel
-   launches per full sweep instead of one.
+# Conway's Game of Life: C++/CUDA Implementation
+
+This is the third version of Conways game of life used as a learning experience
+into new languages or coding paradigms.
+
+This implementation follows the same idea as version 2 () but now written in C++
+with a GPU kernel to see the difference in speed from a GPU-accelerated implementation.
+This version also explores the use of a C-API and a interface to python using
+`ctypes`.
+
+To install the library first modify the `MakeFile` according to your needs. In
+particular the compilers and the GPU compute capability. Then just type the 
+following.
+
+```
+make all
+```
+
+This will create two versions inside of `lib` a CPU and GPU versions. Based on
+compilation flags the CPU version can either be single thread or multithreaded
+with openMP.
+
+An example on how to load the library and run it in python is given inside the 
+`python` directory. For example from the main directory.
+
+```
+python python/gameoflife.py --rows 20 --cols 20 --back CPU
+```
+
+The first flags corresponde to the side of the grid and the last one to the 
+backend to be used either CPU or GPU.
+
