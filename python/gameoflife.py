@@ -9,7 +9,7 @@ import argparse
 from gol import GameOfLife
 
 
-def glider(height: int, width: int) -> np.ndarray:
+def create_grid(height: int, width: int) -> np.ndarray:
     state =  np.array(np.random.rand(height, width) > 0.5, dtype=np.uint8)
     return state
 
@@ -56,7 +56,7 @@ if __name__ == "__main__":
     rows = args.rows
     cols = args.cols
 
-    game = GameOfLife(glider(rows, cols), backend=args.back)
+    game = GameOfLife(create_grid(rows, cols), backend=args.back)
 
     for gen in range(1000):
         print(render(game.state()), end="")
